@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teren Tc Trust</title>
+    <style>
+        .image1 {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            color: white;
+            transition: opacity 3s;
+        }
+        
+        .body1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 55.168px;
+            font-family: "Jaro";
+            text-align: center;
+            white-space: nowrap; /* Prevent text wrapping */
+            color:#f4f7f8;
+        }
+
+        h1 {
+            text-align: left;
+            color: #5ac0cd;
+            font-size: 75.168px;
+            margin: 0 auto;
+            padding: 20px 10%;
+        }
+        .packages {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            padding: 20px 10%;
+            text-align: left;
+        }
+        .package {
+            width: 25%;
+        }
+        .package h2 {
+            color: #5ac0cd;
+            font-size: 54px;
+            margin-bottom: 30px;
+            margin-right: 30px;
+        }
+        .package .price {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+        .package ul {
+            list-style-type: disc;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .package li {
+            margin-bottom: 25px;
+            font-size: 23px;
+            line-height: 1.6;
+        }
+        .tarife-link {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            padding: 15px 30px;
+            font-size: 28px;
+            color: white;
+            background-color: #5ac0cd;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: "Jaro", sans-serif;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+        }
+        .tarife-link:hover {
+            background-color: #6ad1e0;
+        }
+        .social-media-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-media-links a {
+            font-size: 24px; 
+            color: #333;
+            margin: 0 15px; 
+            text-decoration: none; 
+            transition: color 0.3s ease;
+        }
+        .social-media-links a:hover {
+            color: #6a5acd; 
+        }
+        .social-media-links i {
+            margin-right: 8px;
+        }
+        .footer-section {
+            background: url('bbfd07fb-0014-4e82-97b9-2630dbc66694.webp') center/cover no-repeat;
+            padding: 50px;
+            text-align: center;
+            color: black;
+            font-family: "Jaro", sans-serif;
+            font-weight:bold;
+        }
+        .footer-section p {
+            font-size: 56px;
+            margin-bottom: 35px;
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .footer-icons i {
+            font-size: 30px;
+            color: black;
+            transition: color 0.3s ease;
+        }
+        .footer-icons i:hover {
+            color: #5ac0cd;
+        }
+        
+        .info-section {
+            position: relative;
+            background: none; 
+            padding: 50px;
+            text-align: center;
+            color: black;
+            font-family: "Jaro", sans-serif;
+            font-style: italic;
+            overflow: hidden;
+        }
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; 
+            opacity: 0.8; 
+        }
+        .info-columns {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-columns div {
+            width: 30%;
+            text-align: center; 
+        }
+
+        .info-columns h2 {
+            font-size: 46px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .info-columns p,
+        .info-columns ul,
+        .info-columns li {
+            font-size: 23px;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        .info-columns ul {
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+
+        .about-us {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: transparent; /* Transparent background */
+            color:#5ac0cd ;
+            padding: 10px 20px;
+            border: none; /* Optional: Add a border for better visibility */
+            font-family: "Jaro", sans-serif;
+            font-size: 25px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 9999; /* Ensure this is higher than any other content */
+            display: inline-block; /* Prevent the button from stretching */
+            white-space: nowrap;  /* Keep the text on one line */
+        }
+        .about-us:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Slight highlight on hover */
+            color: #59e6ebfb;
+        }
+
+        .about-us-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent; /* Transparent background */
+            color: #5ac0cd;
+            padding: 10px 20px;
+            border:none ; /* Optional: Add a border for better visibility */
+            font-family: "Jaro", sans-serif;
+            font-size: 25px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 9999; /* Ensure this is higher than any other content */
+            display: inline-block; /* Prevent the button from stretching */
+            white-space: nowrap;  /* Keep the text on one line */
+        }
+        .about-us-top-right:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Slight highlight on hover */
+            color: #59e6ebfb;
+        }
+        .fade-in {
+            opacity: 0; /* Start invisible */
+            transform: translateY(20px); /* Slightly offset */
+            transition: opacity 1s ease, transform 1s ease; /* Smooth animation */
+        }
+
+        .fade-in.show {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Return to original position */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .packages {
+                flex-direction: column;
+                align-items: center;
+            }
+            .package {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 60px;
+                padding: 15px 5%;
+            }
+            .packages {
+                padding: 15px 5%;
+            }
+            .package h2 {
+                font-size: 40px;
+            }
+            .package .price, .package li {
+                font-size: 20px;
+            }
+            .tarife-link {
+                font-size: 24px;
+                padding: 10px 20px;
+            }
+            .footer-section p {
+                font-size: 40px;
+            }
+            .footer-icons i {
+                font-size: 24px;
+            }
+            .info-columns div {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+            .info-columns h2 {
+                font-size: 36px;
+            }
+            .info-columns p, .info-columns ul, .info-columns li {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 48px;
+            }
+            .body1 {
+                font-size: 40px;
+                padding: 0 10px;
+            }
+            .package h2 {
+                font-size: 32px;
+            }
+            .package .price, .package li {
+                font-size: 18px;
+            }
+            .tarife-link {
+                font-size: 20px;
+            }
+            .footer-section p {
+                font-size: 32px;
+            }
+            .footer-icons i {
+                font-size: 20px;
+            }
+            .about-us, .about-us-top-right {
+                font-size: 20px;
+                padding: 8px 15px;
+            }
+            .info-columns div {
+                width: 100%;
+            }
+            .info-columns h2 {
+                font-size: 28px;
+            }
+            .info-columns p, .info-columns ul, .info-columns li {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <a href="javascript:location.reload()" class="about-us" style="top: 10px; left: 10px;">VivBrosteni</a>
+    <div style="width: 100%; height: auto; overflow: hidden;">
+        <img class="image1" src="acces 1 (1).jpg" alt="Terrain">
+    </div>
+    
+    <p class="body1">Bine ați venit la VivBroșteni!<br>Tabăra VivBroșteni este locul unde copiii și adolescenții descoperă bucuria naturii,<br> dezvoltă abilități noi și creează prietenii pentru o viață.<br> Situată într-un cadru de poveste, tabăra oferă activități captivante<br> și programe personalizate,<br> care îmbină educația cu distracția.</p>
+    <h1 class="fade-in">Servicii</h1>
+    <div class="packages fade-in">
+        <div class="package">
+            <h2>Pachetul de <br>bază</h2>
+            <p class="price">1000 de lei de persoană</p>
+            <ul>
+                <li>O gamă variată de activități recreative și educative, menite să îmbine aventura cu relaxarea în mijlocul naturii
+                    <a href="activitati.html" style="color: #5ac0cd; text-decoration: underline;">Vezi mai multe</a>
+                </li>
+                <li> 6 nopți de cazare în confortul hotelului nostru, situat într-un cadru natural spectaculos
+                    <a href="cazare.html" style="color:#5ac0cd; text-decoration: underline;">Vezi mai multe</a>
+                </li>
+                <li>Alături de un regim complet de mese care include mic dejun, prânz și cină, toate pregătite cu ingrediente proaspete și gustoase,de la producatori locali</li>
+            </ul>
+        </div>
+        <div class="package">
+            <h2>Cursuri opționale</h2>
+            <ul>
+                <li>Rafting pe raul Bistrita
+                    <p class="price">90 de lei de persoană</p>
+                </li>
+                <li>Paintball
+                    <p class="price">30 de lei de persoană</p>
+                </li>
+                <li>Traseu mountain biking(bicicleta inclusa)
+                    <p class="price">90 de lei de persoană</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <a href="tarife.html" class="tarife-link">Tarife și date</a>
+    <div class="footer-section">
+        <p>Ne găsiți și pe</p>
+        <div class="footer-icons">
+            <a href="https://www.instagram.com/radu_tm" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/radu_tm" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@yourusername" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    <div class="info-section fade-in">
+      <video autoplay loop muted playsinline class="background-video">
+          <source src="vecteezy_green-plants-being-blown-by-the-wind-in-slow-motion-with_49622054.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="info-columns">
+          <div>
+              <h2>Locație</h2>
+              <ul>
+                  <li>Hotelul VivBrosteni,Str. Toance,Broșteni</li>
+                  <li>Cod poștal 727221</li>
+              </ul>
+          </div>
+          <div>
+              <h2>Program</h2>
+              <p>Luni-Vineri: 10:00 - 22:00</p>
+              <p>Sâmbătă-Duminică: 10:00 — 20:00</p>
+          </div>
+          <div>
+              <h2>Contactați-ne la</h2>
+              <p>vivbrosteni@gmail.com</p>
+              <p>+40 769 067 821</p>
+          </div>
+      </div>
+  </div>
+
+    <!-- Place JavaScript Here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeInElements = document.querySelectorAll(".fade-in");
+
+            const handleScroll = () => {
+                fadeInElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        element.classList.add("show");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", handleScroll);
+            handleScroll(); // Trigger the effect for any elements already in view
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
